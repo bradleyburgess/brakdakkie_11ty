@@ -1,0 +1,19 @@
+.whatsapp {
+  position: fixed;
+  bottom: 30px;
+  right: 15px;
+  width: 2.25rem;
+  height: 2.25rem;
+  aspect-ratio: 1;
+  padding: 0.25rem;
+  border-radius: 50%;
+  background-color: var(--white);
+  cursor: pointer;
+  transition: transform 150ms ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
+  img {
+    height: 100%;
+  }
+}

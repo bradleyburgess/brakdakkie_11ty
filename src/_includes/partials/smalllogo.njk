@@ -1,0 +1,6 @@
+{% if bodyClass | makeArray | has("fullscreen") %}
+  {% set logoFilename = "assets/brakdakkie-logo2-transparent.svg" %}
+{% else %}
+  {% set logoFilename = "assets/brakdakkie-logo2.svg" %}
+{% endif %}
+{% image logoFilename, "Brakdakkie Guest Cottages", formats=['svg'], widths=[null], loading="eager" %}

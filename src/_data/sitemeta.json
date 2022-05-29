@@ -1,8 +1,6 @@
 {
-  "title": "Test Site",
-  "author": "Bradley Burgess",
-  "twitter": "@bburgess_keys",
+  "title": "Brakdakkie Guest Cottages",
+  "author": "Brakdakkie Guest Cottages",
   "description": "A test site",
-  "url": "localhost",
-  "favicon": "./src/img/favicon.svg"
+  "url": "https://brakdakkie.co.za"
 }

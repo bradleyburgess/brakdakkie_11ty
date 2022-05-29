@@ -1,0 +1,62 @@
+---
+layout: 'layouts/base.njk'
+permalink: /
+bodyClass:
+  - fullscreen
+background: home
+pageJs:
+  - reviews
+---
+
+<div class="home-container">
+  <div class="logo">
+    {% include "partials/logo.njk" %}
+  </div>
+  <div class="site-tagline">{{ homePage.siteTagline | markdown | safe }}</div>
+  <div class="btn__container">
+    <a href="{{ cottagesPage.cottages[0].bookingLink }}" class="btn">Book Now</a>
+  </div>
+  <div class="reviews">
+    <div class="rating">
+      <a href="{{ homePage.tripAdvisorLink }}" aria-labelledby="tripadvisor-rating">
+        <div class="rating__stars">
+          {% for i in[1, 2, 3, 4] %}
+            {# <img src="/assets/star.svg" alt="" width="18" height="16"/> #}
+            {% image "assets/star.svg",
+            "",
+            formats = ['svg'],
+            widths = [null],
+            loading = "eager" %}
+          {% endfor %}
+          {# <img src="/assets/star-half.svg" alt="" width="18" height="16"/> #}
+          {% image "assets/star-half.svg", "", formats=['svg'], widths=[null], loading="eager" %}
+        </div>
+        <p class="rating__text" id="tripadvisor-rating">4.5 on TripAdvisor</p>
+      </a>
+    </div>
+    <div class="quotes__container">
+      <div class="quotes__buttons-container">
+        <button class="quotes__button" id="show-prev-review" aria-labelledby="show-prev-review-label">
+          <span id="show-prev-review-label" class="sr-only">Show Previous Review</span>{% image "assets/icon-arrow-prev.svg", "", width=[null], formats=['svg'], loading="eager" %}</button>
+        <button class="quotes__button" data-state="play" id="play-pause" aria-labelledby="play-pause-label">
+          <span id="play-pause-label" class="sr-only">Pause</span>{% image "assets/icon-pause.svg", "", width=[null], formats=['svg'], loading="eager", class="active" %}{% image "assets/icon-play.svg", "", width=[null], formats=['svg'], loading="eager" %}</button>
+        <button class="quotes__button" id="show-next-review" aria-labelledby="show-next-review-label">
+          <span id="show-next-review-label" class="sr-only">Show Next Review</span>{% image "assets/icon-arrow-next.svg", "", width=[null], formats=['svg'], loading="eager" %}</button>
+      </div>
+      <ul class="quotes__list" id="quotes-list">
+        {% for item in reviews %}
+          <li class="quotes__list-item {% if loop.index0 === 0 %}active{% endif %}">
+            <a href="{{ item.url }}">
+              <figure class="quotes">
+                <q class="quotes__text">{{ item.quote }}</q>
+                <figcaption>
+                  <cite class="quotes__author">{{ item.author }}</cite>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>

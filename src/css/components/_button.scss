@@ -1,0 +1,17 @@
+.btn {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: inherit;
+  border: 0.0625rem solid var(--white);
+  border-radius: 0.625rem;
+  padding: 1rem 1.25rem;
+  transition: all 150ms ease-in-out;
+  &:hover,
+  &:focus {
+    color: var(--gray3);
+    background-color: var(--white);
+  }
+}

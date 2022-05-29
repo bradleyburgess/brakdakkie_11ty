@@ -1,0 +1,40 @@
+.hamburger-toggle {
+  @include breakpoint-up(medium) {
+    display: none;
+  }
+  z-index: 1000;
+  display: block;
+  right: 0;
+  padding: 0.5rem;
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  .hamburger-line {
+    display: block;
+    height: 0.125rem;
+    width: 2rem;
+    background-color: var(--gray1);
+    body.fullscreen &,
+    .menu-open & {
+      background-color: var(--white);
+    }
+    border-radius: 0.0625rem;
+    transform-origin: 0.125rem 0px;
+    transition: all 150ms ease-in-out;
+    &:not(:last-of-type) {
+      margin-bottom: 0.5rem;
+    }
+  }
+  .menu-open & {
+    .hamburger-line:first-of-type {
+      transform: rotate(45deg);
+    }
+    .hamburger-line:nth-of-type(2) {
+      opacity: 0;
+    }
+    .hamburger-line:last-of-type {
+      transform: rotate(-45deg);
+    }
+  }
+}

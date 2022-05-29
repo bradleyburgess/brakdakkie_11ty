@@ -38,10 +38,10 @@ jobs:
           key: ${{ runner.os }}-build-cache
 
       - name: Install dependencies
-        run: yarn && npm install -g @lhci/cli@0.9.x
+        run: yarn && yarn global add @lhci/cli@0.9.x
 
       - name: Build site
-        run: yarn build
+        run: DEBUG=Eleventy* API_ENDPOINT=${{ secrets.API_ENDPOINT }} API_TOKEN=${{ secrets.API_TOKEN }} yarn build
 
       - name: Run Lighthouse
         run: lhci autorun

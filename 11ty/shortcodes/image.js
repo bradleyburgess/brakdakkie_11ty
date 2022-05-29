@@ -1,3 +1,4 @@
+const debug = require('debug')('Eleventy-image');
 const path = require('path');
 const Image = require('@11ty/eleventy-img');
 const dir = require('../constants/dir');
@@ -25,10 +26,11 @@ module.exports = async function (src, alt, _options) {
   const imgDir = '/img';
   const fullyQualifiedSrc = isRemoteSrc
     ? src
-    : path.join(dir.input, 'img', path.parse(src).dir, path.parse(src).base);
+    : path.join(dir.input, path.parse(src).dir, path.parse(src).base);
   const outputDir = path.join(dir.output, 'img');
 
   console.log(`Transforming image: ${src} in${this.page.inputPath}`);
+  debug('transforming image: ' + src);
 
   const metadata = await Image(fullyQualifiedSrc, {
     widths,
@@ -44,5 +46,9 @@ module.exports = async function (src, alt, _options) {
     decoding: 'async',
   };
 
-  return Image.generateHTML(metadata, imageAttributes);
+  if (options.class) imageAttributes.class = options.class;
+
+  const html = Image.generateHTML(metadata, imageAttributes);
+  debug('done transforming; returning');
+  return html;
 };

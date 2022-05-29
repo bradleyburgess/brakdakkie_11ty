@@ -3,6 +3,7 @@ const dir = require('./11ty/constants/dir');
 
 const brokenLinks = require('eleventy-plugin-broken-links');
 const faviconPlugin = require('eleventy-plugin-gen-favicons');
+const findFilter = require('./11ty/filters/find');
 const htmlminTransform = require('./11ty/transforms/htmlmin');
 const imageShortcode = require('./11ty/shortcodes/image');
 const markdownShortcode = require('./11ty/shortcodes/markdown');
@@ -11,13 +12,23 @@ const ogMetaShortcode = require('./11ty/shortcodes/ogmeta');
 const prettierTransform = require('./11ty/transforms/prettier');
 const sanitizeHtmlAttr = require('./11ty/helpers/sanitizeHtmlAttr');
 const toAbsoluteUrlFilter = require('./11ty/filters/toAbsoluteUrl');
+const objectHasFilter = require('./11ty/filters/object-has');
+const jsminFilter = require('./11ty/filters/jsmin');
+const makeArrayFilter = require('./11ty/filters/makeArray');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./11ty');
+  eleventyConfig.addWatchTarget('./src');
+  eleventyConfig.addPassthroughCopy({ 'src/assets': 'assets' });
 
   // filters
-  eleventyConfig.addFilter('toAbsoluteUrl', toAbsoluteUrlFilter);
   eleventyConfig.addFilter('sanitizeHtmlAttr', sanitizeHtmlAttr);
+  eleventyConfig.addFilter('toAbsoluteUrl', toAbsoluteUrlFilter);
+  eleventyConfig.addFilter('has', objectHasFilter);
+  eleventyConfig.addFilter('jsmin', jsminFilter);
+  eleventyConfig.addFilter('makeArray', makeArrayFilter);
+  eleventyConfig.addFilter('markdown', markdownShortcode);
+  eleventyConfig.addFilter('find', findFilter);
 
   // shortcodes
   eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);

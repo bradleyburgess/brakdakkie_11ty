@@ -1,0 +1,29 @@
+{% set pages = ['about', 'cottages', 'rates', 'contact'] %}
+
+{% if bodyClass | makeArray | has('fullscreen') %}
+  {% set imageUrl = '/assets/brakdakkie-logo1-transparent.svg' %}
+{% else %}
+  {% set imageUrl = '/assets/brakdakkie-logo1.svg' %}
+{% endif %}
+<nav class="main-nav" id="main-nav">
+  {% set transparentLogo = true %}
+  <div class="main-nav__logo">
+    <a href="/">{% include "partials/logo.njk" %}</a>
+  </div>
+  <h2 id="main-nav__label" class="sr-only">Main Navigation</h2>
+  <ul class="main-nav__list" aria-labelledby="main-nav__label">
+    {% for item in pages %}
+      <li class="main-nav__list-item">
+        <a href="/{{ item }}" {% if page.url === '/' + item + '/' %}aria-current="page"{% endif %}>{{ item | capitalize }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <h2 id="social-links__label" class="sr-only">Social Links</h2>
+  <ul class="social-links__list" aria-labelledby="social-links__label">
+    {% for item in socialLinks.mobileMenu %}
+      <li class="social-links__list-item">
+        <a href="{{ item.url }}">{% image "assets/icon-" + item.name | slugify + ".svg", item.name, widths=[null], loading="eager", formats=["svg"] %}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

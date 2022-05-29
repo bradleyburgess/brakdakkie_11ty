@@ -1,0 +1,6 @@
+{% set whatsappObj = socialLinks.all | find('name', 'WhatsApp') %}
+<div class="whatsapp">
+  <a href="{{ whatsappObj.url }}">
+    {% image "assets/icon-whatsapp-gray.svg", "Contact on WhatsApp", widths=[null], formats=['svg'], loading="eager" %}
+  </a>
+</div>

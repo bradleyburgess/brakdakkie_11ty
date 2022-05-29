@@ -1,2 +1,17 @@
+@import 'variables';
+@import 'mixins';
+@import 'animations';
 @import 'reset';
-@import 'base';
+@import 'globals';
+@import 'components/button';
+@import 'components/footer';
+@import 'components/fsbackground';
+@import 'components/hamburger';
+@import 'components/header';
+@import 'components/home-page';
+@import 'components/logo';
+@import 'components/navigation';
+@import 'components/ratings';
+@import 'components/reviews';
+@import 'components/whatsapp';
+// @import 'temp';

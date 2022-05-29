@@ -1,0 +1,50 @@
+:root {
+  // theme colors
+  --gray1: #333333;
+  --gray2: #4f4f4f;
+  --gray3: #828282;
+  --gray4: #bdbdbd;
+  --gray5: #e0e0e0;
+  --gray6: #f2f2f2;
+  --white: var(--gray6);
+  --red: #be1e2d;
+
+  // brand colors
+  --instagram: #833ab4;
+  --facebook: #4267b2;
+  --whatsapp: #2bb741;
+  --google: #ea4335;
+  --tripadvisor: #34e0a1;
+  --phone: #1877f2;
+
+  // fonts
+  --font-serif: 'Noto Serif', serif;
+  --font-sans: 'Open Sans', sans-serif;
+  --font-cursive: 'Kaushan Script', cursive;
+
+  // font sizes (minor third)
+  --size1: 2.488rem;
+  --size2: 2.074rem;
+  --size3: 1.728rem;
+  --size4: 1.44rem;
+  --size5: 1.2rem;
+  --size-normal: 1rem;
+  --size-small: 0.8333rem;
+  small {
+    font-size: var(--size-small);
+  }
+
+  // container sizes
+  --container: 60rem;
+
+  // transition
+  --transition-duration: 0.15s;
+  --transition-function: ease-in-out;
+
+  // breakpoints
+  --mobile-breakpoint: 515px;
+
+  // durations
+  --quote-length: 3000ms;
+  --quote-fade: 250ms;
+}

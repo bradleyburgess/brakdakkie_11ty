@@ -1,19 +1,107 @@
-{% if not description %}{% set description = sitemeta.description | sanitizeHtmlAttr %}{% endif %}
-{% if (permalink == '/') or not title %}{% set docTitle = sitemeta.title %}{% else %}{% set docTitle = [title, sitemeta.title] | join(" | ") %}{% endif %}
+{% if not description %}{% set description = sitemeta.description | sanitizeHtmlAttr %}
+{% endif %}
+{% if (permalink == '/') 
+  or not title %}{% set docTitle = sitemeta.title %}
+{% else %}{% set docTitle = [title, sitemeta.title] | join(" | ") %}
+{% endif %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="{{ description }}" />
-  <link rel="stylesheet" href="/css/index{{ hash.css }}.css" media="screen" />
-  <script src="/js/index{{ hash.js }}.js" defer></script>
-  <title>{{ docTitle }}</title>
-  {% if sitemeta.favicon %}{% favicons sitemeta.favicon %}{% endif %}
-  {% block head %}{% endblock %}
-</head>
-<body>
-  {{ content | safe }}
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="{{ description }}"/>
+    {% ogmeta docTitle,
+    page.url | toAbsoluteUrl,
+    description %}
+    {% if ogImage %}{% ogimage ogImage.src,
+      ogImage.alt %}
+    {% elif sitemeta.ogImage %}{% ogimage sitemeta.ogImage.src,
+      sitemeta.ogImage.alt %}
+    {% endif %}
+    <title>{{ docTitle }}</title>
+
+    {# google fonts #}
+    {% if googlefonts %}<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>{% endif %}
+
+    {# inline css #}
+    {% if googlefonts %}
+      <style>
+        {{googlefonts | safe}}
+      </style>
+    {% endif %}
+    {% if criticalCss %}
+      {%- set css %}
+      {% for item in criticalCss | makeArray %}
+        {% include "critical-css/" + item + ".css" %}
+      {% endfor %}
+      {% for includeLocation in css %}
+        {% include includeLocation %}
+      {% endfor %}
+      {% endset %}
+      <style>
+        {{css | safe}}
+      </style>
+    {% endif %}
+
+    {# inline js #}
+    {% if criticalJs %}
+      {% set js %}
+      {% for item in criticalJs %}
+        {% include "critical-js/" + item + ".js" %}
+      {% endfor %}
+      {% endset %}
+      <script>
+        {{ js | jsmin }}
+      </script>
+    {% endif %}
+
+    {# normal css #}
+    {% if hash.css | has('index') %}<link rel="stylesheet" href="/css/index{{ hash.css.index }}.css" media="screen"/>{% endif %}
+    {% if pageCss %}
+      {% for item in pageCss %}<link rel="stylesheet" href="/css/{{ item }}{{ hash.css[item] }}.css" media="screen"/>{% endfor %}
+    {% endif %}
+
+    {# normal js #}
+    {% if hash.js | has('index') %}
+      <script src="/js/index{{ hash.js.index }}.js" defer></script>
+    {% endif %}
+    {% if pageJs %}
+      {% for item in pageJs %}
+        <script src="/js/{{ item }}{{ hash.js[item] }}.js" defer></script>
+      {% endfor %}
+    {% endif %}
+
+    {# favicon #}
+    {% if sitemeta | has('favicon') %}
+      {% favicons sitemeta.favicon %}
+    {% else %}
+      <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+    {% endif %}
+  </head>
+  <body {% if bodyClass %}class="{{ bodyClass | makeArray | join(" ") }}"{% endif %}>
+    <header class="header">
+      <a href="/" aria-label="Brakdakkie Guest Cottages" class="header__logo">
+        {% include "partials/smalllogo.njk" %}
+      </a>
+      {% include "partials/navigation.njk" %}
+      <button class="hamburger-toggle" id="hamburger-toggle" aria-labelledby="hamburger-label" aria-expanded="false" aria-controls="mobile-nav">
+        <span id="hamburger-label" class="sr-only">Open Menu</span>
+        <div>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </div>
+      </button>
+    </header>
+    <main>
+      {{ content | safe }}
+    </main>
+    <footer class="footer">Copyright &copy; {{ year }}. Brakdakkie Guest Cottages.</footer>
+    {% if background %}
+      <div class="fsbackground">{% image fsBackgrounds[background],
+        "" %}</div>
+    {% endif %}
+    {% include "partials/whatsapp-icon.njk" %}
+  </body>
 </html>
