@@ -17,3 +17,6 @@ _testing/
 .env
 .env.production
 .env.development
+
+# hash map for js / css
+src/_data/hash.json
