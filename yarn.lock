@@ -95,7 +95,11 @@
   resolved "https://registry.yarnpkg.com/@babel/compat-data/-/compat-data-7.17.10.tgz#711dc726a492dfc8be8220028b1b92482362baab"
   integrity sha512-GZt/TCsG70Ms19gfZO1tM4CVnXsPgEPBCpJu+Qz3L0LUDsY5nZqFZglIoPC1kIYOtNBZlrnFT+klg12vFGZXrw==
 
+<<<<<<< HEAD
 "@babel/core@^7.18.0":
+=======
+"@babel/core@^7.18.2":
+>>>>>>> c471e6adca656f9a7c99f865e0dec3b3cc709bc1
   version "7.18.2"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.18.2.tgz#87b2fcd7cce9becaa7f5acebdc4f09f3dd19d876"
   integrity sha512-A8pri1YJiC5UnkdrWcmfZTJTV85b4UXTAfImGmCfYmax4TR9Cw8sDS0MOk++Gp2mE/BefVJ5nwy5yzqNJbP/DQ==
@@ -136,6 +140,11 @@
     semver "^6.3.0"
 
 "@babel/helper-environment-visitor@^7.16.7", "@babel/helper-environment-visitor@^7.18.2":
+  version "7.18.2"
+  resolved "https://registry.yarnpkg.com/@babel/helper-environment-visitor/-/helper-environment-visitor-7.18.2.tgz#8a6d2dedb53f6bf248e31b4baf38739ee4a637bd"
+  integrity sha512-14GQKWkX9oJzPiQQ7/J36FTXcD4kSp8egKjO9nINlSKiHITRA9q/R74qu8S9xlc/b/yjsJItQUeeh3xnGN0voQ==
+
+"@babel/helper-environment-visitor@^7.18.2":
   version "7.18.2"
   resolved "https://registry.yarnpkg.com/@babel/helper-environment-visitor/-/helper-environment-visitor-7.18.2.tgz#8a6d2dedb53f6bf248e31b4baf38739ee4a637bd"
   integrity sha512-14GQKWkX9oJzPiQQ7/J36FTXcD4kSp8egKjO9nINlSKiHITRA9q/R74qu8S9xlc/b/yjsJItQUeeh3xnGN0voQ==
@@ -260,6 +269,7 @@
     debug "^4.1.0"
     globals "^11.1.0"
 
+<<<<<<< HEAD
 "@babel/types@^7.16.7", "@babel/types@^7.17.0", "@babel/types@^7.18.0", "@babel/types@^7.18.2":
   version "7.18.2"
   resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.18.2.tgz#191abfed79ebe6f4242f643a9a5cbaa36b10b091"
@@ -272,6 +282,12 @@
   version "7.18.0"
   resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.18.0.tgz#ef523ea349722849cb4bf806e9342ede4d071553"
   integrity sha512-vhAmLPAiC8j9K2GnsnLPCIH5wCrPpYIVBCWRBFDCB7Y/BXLqi/O+1RSTTM2bsmg6U/551+FCf9PNPxjABmxHTw==
+=======
+"@babel/types@^7.16.7", "@babel/types@^7.17.0", "@babel/types@^7.18.0", "@babel/types@^7.18.2", "@babel/types@^7.6.1", "@babel/types@^7.9.6":
+  version "7.18.2"
+  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.18.2.tgz#191abfed79ebe6f4242f643a9a5cbaa36b10b091"
+  integrity sha512-0On6B8A4/+mFUto5WERt3EEuG1NznDirvwca1O8UwXQHVY8g3R7OzYgxXdOfMwLO08UrpUD/2+3Bclyq+/C94Q==
+>>>>>>> c471e6adca656f9a7c99f865e0dec3b3cc709bc1
   dependencies:
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
@@ -1265,7 +1281,11 @@
     "@parcel/utils" "2.6.0"
     react-refresh "^0.9.0"
 
+<<<<<<< HEAD
 "@parcel/transformer-sass@^2.5.0":
+=======
+"@parcel/transformer-sass@^2.6.0":
+>>>>>>> c471e6adca656f9a7c99f865e0dec3b3cc709bc1
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/@parcel/transformer-sass/-/transformer-sass-2.6.0.tgz#4e2d51eb9bb04377203f0dd657aa913ae358e608"
   integrity sha512-WAHmPffHCc3ad+kMv0JSwAfA9mYv/kLYHxMvdnsMx2+K4WxUnCtPreshfs7iTVCJeFgNh8fhHmh9hWb0DmyfKQ==
@@ -4015,7 +4035,11 @@ param-case@^2.1.1:
   dependencies:
     no-case "^2.2.0"
 
+<<<<<<< HEAD
 parcel@^2.5.0:
+=======
+parcel@^2.6.0:
+>>>>>>> c471e6adca656f9a7c99f865e0dec3b3cc709bc1
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/parcel/-/parcel-2.6.0.tgz#801bd3af8339966fc52370033e1b7f3c9b9e457d"
   integrity sha512-pSTJ7wC6uTl16PKLXQV7RfL9FGoIDA1iVpNvaav47n6UkUdKqfx0spcVPpw35kWdRcHJF61YAvkPjP2hTwHQ+Q==
