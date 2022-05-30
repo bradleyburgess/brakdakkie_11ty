@@ -2,7 +2,8 @@ const EleventyFetch = require('@11ty/eleventy-fetch');
 
 module.exports = async () => {
   const url =
-    'https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:wght@300;400;500;600;700&display=swap';
+    // 'https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:wght@300;400;500;600;700&display=swap';
+    'https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Merriweather:wght@400;700&family=Open+Sans:wght@300;400;500;600;700&display=swap';
 
   try {
     const css = await EleventyFetch(url, {
