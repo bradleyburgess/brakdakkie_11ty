@@ -26,10 +26,11 @@ pageJs:
             "",
             formats = ['svg'],
             widths = [null],
-            loading = "eager" %}
+            loading = "eager",
+            class = "rating__star" %}
           {% endfor %}
           {# <img src="/assets/star-half.svg" alt="" width="18" height="16"/> #}
-          {% image "assets/star-half.svg", "", formats=['svg'], widths=[null], loading="eager" %}
+          {% image "assets/star-half.svg", "", formats=['svg'], widths=[null], loading="eager", class="rating__star" %}
         </div>
         <p class="rating__text" id="tripadvisor-rating">4.5 on TripAdvisor</p>
       </a>

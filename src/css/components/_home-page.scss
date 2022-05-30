@@ -59,20 +59,20 @@
     @include breakpoint-up(medium) {
       margin-top: 0.375rem;
     }
-    img {
-      opacity: 0;
-      $animation-duration: 400ms;
-      animation-name: fadeIn;
-      animation-duration: $animation-duration;
-      animation-timing-function: ease-in-out;
-      animation-direction: forwards;
-      animation-fill-mode: forwards;
-      width: 1rem;
-      height: auto;
-      @for $i from 1 through 5 {
-        &:nth-of-type(#{$i}) {
-          animation-delay: calc($animation-duration * $i);
-        }
+  }
+  &__star {
+    opacity: 0;
+    $animation-duration: 400ms;
+    animation-name: fadeIn;
+    animation-duration: $animation-duration;
+    animation-timing-function: ease-in-out;
+    animation-direction: forwards;
+    animation-fill-mode: forwards;
+    width: 1rem;
+    height: auto;
+    @for $i from 1 through 5 {
+      &:nth-of-type(#{$i}) {
+        animation-delay: calc($animation-duration * $i);
       }
     }
   }
@@ -97,7 +97,7 @@
     justify-content: center;
     grid-area: main;
     opacity: 0;
-    visibility: hidden;
+    // visibility: hidden;
     animation-duration: 500ms;
     animation-timing-function: ease-in-out;
     animation-direction: forwards;
