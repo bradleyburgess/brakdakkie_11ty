@@ -35,7 +35,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "graphql": "^16.4.0",
-    "graphql-request": "^4.2.0",
+    "graphql-request": "^4.3.0",
     "html-minifier": "^4.0.0",
     "md5": "^2.3.0",
     "netlify-plugin-11ty": "^1.1.0",
@@ -43,7 +43,7 @@
     "parcel": "^2.6.0",
     "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
-    "terser": "^5.13.1"
+    "terser": "^5.14.0"
   },
   "browserslist": "defaults",
   "targets": {
