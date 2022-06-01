@@ -1,0 +1,42 @@
+<footer class="footer">
+    <div class="footer__content">
+        {% if not bodyClass | has('fullscreen') %}
+            <address class="footer__address">
+                <div class="footer__section">
+                    <div class="footer__icon">
+                        {% image "assets/icon-google-maps.svg", "", widths=[null] %}
+                    </div>
+                    <div class="footer__text">
+                        {% set footerMaps = socialLinks.all | find('name', 'Google Maps') %}
+                        <a href="{{ footerMaps.url }}">
+                            {{ footerInfo.address | markdown | safe }}
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__section">
+                    <div class="footer__icon">
+                        {% image "assets/icon-phone.svg", "", widths=[null] %}
+                    </div>
+                    <div class="footer__text">
+                        {% set footerPhone = socialLinks.all | find('name', 'Phone') %}
+                        <a href="{{ footerPhone.url }}">
+                            {{ footerInfo.phone | markdown | safe }}
+                        </a>
+                    </div>
+                    <div class="footer__icon">
+                        {% image "assets/icon-email.svg", "", widths=[null] %}
+                    </div>
+                    <div class="footer__text">
+                        {% set footerEmail = socialLinks.all | find('name', 'Email') %}
+                        <a href="{{ footerEmail.url }}">
+                            {{ footerInfo.email | markdown | safe }}
+                        </a>
+                    </div>
+                </div>
+            </address>
+        {% endif %}
+        <div class="footer__copyright">
+            {{ footerInfo.copyright }}
+        </div>
+    </div>
+</footer>

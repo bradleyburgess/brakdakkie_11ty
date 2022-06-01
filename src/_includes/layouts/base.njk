@@ -97,7 +97,7 @@
     <main>
       {{ content | safe }}
     </main>
-    <footer class="footer">Copyright &copy; {{ year }}. Brakdakkie Guest Cottages.</footer>
+    {% include "partials/footer.njk" %}
     {% if background %}
       <div class="fsbackground">{% image fsBackgrounds[background],
         "" %}</div>

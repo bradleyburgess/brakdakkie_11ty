@@ -5,14 +5,17 @@ body {
 
 body {
   font-family: var(--font-serif);
+  line-height: 1.5;
+  background-color: var(--gray5);
 }
 
 main {
   margin-top: 4.0125rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   .fullscreen & {
     flex: 1;
-    display: flex;
-    flex-direction: column;
   }
 }
 
@@ -24,6 +27,47 @@ main {
   color: var(--white);
   display: flex;
   flex-direction: column;
+  background-color: initial;
+}
+
+// text
+p {
+  line-height: 1.75;
+  & + * {
+    margin-top: 1em;
+  }
+}
+h1 {
+  font-size: var(--size1);
+}
+h2 {
+  font-size: var(--size2);
+}
+h3 {
+  font-size: var(--size3);
+}
+h4 {
+  font-size: var(--size4);
+}
+
+ul:not([class]),
+ol:not([class]) {
+  padding-left: 1.125rem;
+  list-style-type: disc;
+}
+
+li:not([class]) + li:not([class]) {
+  margin-top: 0.75em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 150ms ease-in-out;
+  &:hover,
+  &:focus {
+    color: var(--red);
+  }
 }
 
 // Screen readers

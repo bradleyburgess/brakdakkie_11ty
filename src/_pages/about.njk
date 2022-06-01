@@ -1,0 +1,62 @@
+---
+layout: 'layouts/base.njk'
+permalink: /about/
+pageJs:
+  - about
+---
+
+<div class="logo">
+    {% include "partials/logo.njk" %}
+</div>
+
+<section class="features">
+    <ul class="features__list">
+        {% for item in aboutPage.aboutSections %}
+            <li class="features__list-item">
+                <div class="features__text">
+                    <h2 class="features__heading">{{ item.heading }}</h2>{{ item.description.markdown | markdown | safe }}
+                </div>
+                <div class="features__image">
+                    {% set _loading = 'eager' %}
+                    {% if loop.index0 > 2 %}{% set _loading = 'lazy' %}
+                    {% endif %}
+                    {% image item.image.url,
+                    "",
+                    loading = _loading,
+                    sizes = "(min-width: 40rem) 50vw, (min-width: 70.875rem) 30.5rem, 100vw",
+                    class = "features__image" %}
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+<section class="policies-news">
+    <div class="policies">
+        <h2 class="features__heading">Policies</h2>
+        <div class="policies__items">
+            {% for item in aboutPage.policies %}
+                <details class="policies__details">
+                    <summary class="policies__summary">
+                        {{ item.heading }}
+                    </summary>
+                    <div class="policies__description">
+                        {{ item.content.markdown | markdown | safe }}
+                    </div>
+                </details>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="policies-news__news">
+        <h2 class="features__heading">Brakdakkie in the News</h2>
+        <ul class="news__list">
+            {% for item in aboutPage.newsItems %}
+                <li class="news__list-item">
+                    <a href="{% if item.file %}{{ item.file.url }}{% else %}{{ item.url }}{% endif %}">
+                        <h3 class="news__heading">{{ item.title }}</h3>
+                        <h4 class="news__source">{{ item.source }}</h4>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>

@@ -56,7 +56,8 @@
     "js": {
       "source": [
         "./src/js/index.js",
-        "./src/js/reviews.js"
+        "./src/js/reviews.js",
+        "./src/js/about.js"
       ],
       "distDir": "./dist/js"
     }
