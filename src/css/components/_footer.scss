@@ -25,12 +25,15 @@
   &__address {
     font-style: normal;
     text-align: left;
+    & * {
+      line-height: 1.5;
+    }
     @include breakpoint-down(small) {
       row-gap: 1rem;
     }
     @include breakpoint-up(medium) {
       width: 100%;
-      max-width: 40rem;
+      max-width: 32rem;
       display: flex;
       justify-content: space-between;
       gap: 2rem;
