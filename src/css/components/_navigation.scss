@@ -52,6 +52,9 @@
           &::after {
             background-color: var(--red);
             transform: scaleX(1);
+            .fullscreen & {
+              background-color: var(--white);
+            }
           }
         }
       }
