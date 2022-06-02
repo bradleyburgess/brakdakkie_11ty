@@ -1,0 +1,30 @@
+---
+layout: 'layouts/base.njk'
+permalink: /rates/
+---
+
+<div class="logo">
+    {% include "partials/logo.njk" %}
+</div>
+
+<div class="rates">
+    <div class="rates__grid">
+        <div class="rates__image">{% image ratesPage.featuredImage,
+            "" %}</div>
+
+        <div class="rates__text">
+            <h1 class="rates__heading">Rates</h1>
+            {% for item in ratesPage.rates | sort %}
+                <section class="rates__section">
+                    <h2 class="rates__cottage-heading">
+                        {% if item.cottage === 'one_two_four' %}Cottages 1, 2 & 4{% elif item.cottage === 'three' %}Cottage 3{% endif %}
+                    </h2>
+                    <div class="rates__info">{{ item.rate | markdown | safe }}</div>
+                </section>
+            {% endfor %}
+            <div class="rates__button">
+                <a href="{{ cottagesPage.cottages[0].bookingLink }}" class="btn">Book Now</a>
+            </div>
+        </div>
+    </div>
+</div>
