@@ -1,6 +1,8 @@
 ---
 layout: 'layouts/base.njk'
 permalink: /cottages/
+pageJs:
+  - cottages
 ---
 
 {% set cottages = cottagesPage.cottages %}
@@ -54,3 +56,19 @@ permalink: /cottages/
         </section>
     {% endfor %}
 </div>
+<script type="module">
+    import PhotoSwipeLightbox from '/photoswipe/photoswipe-lightbox.esm.min.js';
+    const galleries = document.querySelectorAll('.cottages__gallery');
+    Array
+        .prototype
+        .forEach
+        .call(galleries, (gallery) => {
+            const lightbox = new PhotoSwipeLightbox({
+                gallery,
+                children: 'a',
+                pswpModule: () => import ('/photoswipe/photoswipe.esm.min.js')
+            });
+            lightbox.init();
+
+        })
+</script>
