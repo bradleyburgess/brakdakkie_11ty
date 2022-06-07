@@ -38,5 +38,16 @@ const COTTAGES_PAGE_QUERY = gql`
 
 module.exports = async () => {
   const data = await getRequest(COTTAGES_PAGE_QUERY, 'cottages-page');
-  return data;
+  return {
+    cottages: data.cottages.map(({ number, heading, bookingLink, description, gallery }) => ({
+      number,
+      heading,
+      description: description.markdown,
+      bookingLink,
+      gallery,
+    })),
+    socialLink: data.socialLink.url,
+    rates: data.rates.map(({ cottage, rate }) => ({ cottage, rate: rate.markdown })),
+    featuredImage: data.pageSetting.featuredImage,
+  };
 };

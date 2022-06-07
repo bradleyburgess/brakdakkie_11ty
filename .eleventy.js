@@ -29,6 +29,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('makeArray', makeArrayFilter);
   eleventyConfig.addFilter('markdown', markdownShortcode);
   eleventyConfig.addFilter('find', findFilter);
+  eleventyConfig.addFilter('keys', (obj) => Object.keys(obj));
 
   // shortcodes
   eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);

@@ -1,7 +1,7 @@
 import createNextPrev from './lib/createNextPrev';
 import { pause, togglePlayPause } from './lib/togglePlayPause';
 
-(async () => {
+function initReviews() {
   const store = {
     currentReview: 0,
     interval: null,
@@ -33,4 +33,6 @@ import { pause, togglePlayPause } from './lib/togglePlayPause';
   );
 
   store.interval = setInterval(showNextReview, 4000);
-})();
+}
+
+export default initReviews;

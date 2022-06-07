@@ -25,25 +25,34 @@
     "@11ty/eleventy-img": "^2.0.1",
     "@babel/core": "^7.18.2",
     "@parcel/transformer-sass": "^2.6.0",
+    "assert": "^2.0.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "browser-sync": "^2.27.10",
     "cross-env": "^7.0.3",
+    "crypto-browserify": "^3.12.0",
     "dotenv": "^16.0.1",
     "eleventy-plugin-broken-links": "^2.0.2",
     "eleventy-plugin-gen-favicons": "^1.1.0",
     "eslint": "^8.17.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "events": "^3.3.0",
     "graphql": "^16.4.0",
     "graphql-request": "^4.3.0",
     "html-minifier": "^4.0.0",
     "md5": "^2.3.0",
     "netlify-plugin-11ty": "^1.1.0",
     "npm-run-all": "^4.1.5",
+    "os-browserify": "^0.3.0",
     "parcel": "^2.6.0",
+    "path-browserify": "^1.0.1",
     "prettier": "^2.6.2",
+    "querystring-es3": "^0.2.1",
     "rimraf": "^3.0.2",
-    "terser": "^5.14.0"
+    "stream-browserify": "^3.0.0",
+    "terser": "^5.14.0",
+    "url": "^0.11.0",
+    "util": "^0.12.4"
   },
   "browserslist": "defaults",
   "targets": {
@@ -57,9 +66,13 @@
       "source": [
         "./src/js/index.js",
         "./src/js/reviews.js",
-        "./src/js/about.js"
+        "./src/js/about.js",
+        "./src/js/cottages.js"
       ],
       "distDir": "./dist/js"
     }
+  },
+  "dependencies": {
+    "photoswipe": "^5.2.7"
   }
 }

@@ -10,6 +10,7 @@ const defaults = {
   loading: 'lazy',
   sizes: ['100vw'],
   widths: [600, 900, 1200, 1800, 2400, 4200, null],
+  galleryImage: false,
 };
 
 module.exports = async function (src, alt, _options) {
@@ -50,5 +51,12 @@ module.exports = async function (src, alt, _options) {
 
   const html = Image.generateHTML(metadata, imageAttributes);
   debug('done transforming; returning');
+
+  if (options.galleryImage) {
+    const lastWebp = metadata.webp[metadata.webp.length - 1];
+    return `<a href="${lastWebp.url}"
+    data-pswp-width="${lastWebp.width}"
+    data-pswp-height="${lastWebp.height}">${html}</a>`;
+  }
   return html;
 };

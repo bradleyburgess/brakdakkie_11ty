@@ -1,0 +1,56 @@
+---
+layout: 'layouts/base.njk'
+permalink: /cottages/
+---
+
+{% set cottages = cottagesPage.cottages %}
+
+<div class="cottages tabbed">
+    <nav class="cottages__nav">
+        <ul class="cottages__tab-list">
+            {% for item in cottages %}
+                <li class="cottages__tab-list-item">
+                    <a href="#cottage{{ item.number }}">Cottage {{ item.number }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+
+    {% for cottage in cottages %}
+        <section id="cottage{{ cottage.number }}">
+            <div class="cottages__gallery">
+                {% for item in cottage.gallery %}
+                    <div class="cottages__image">
+                        {% image item.url,
+                        item.description,
+                        sizes="(max-width: 1200px) 30vw, 340px",
+                        galleryImage = true %}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="cottages__info">
+                <h1 class="cottages__heading">{{ cottage.heading }}</h1>
+                <div class="cottages__description">
+                    {{ cottage.description | markdown | safe }}
+                </div>
+                <div class="btn__container">
+                    <a href="{{ cottage.bookingLink }}" class="btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="cottages__rates">
+                <div class="cottages__rates-image">{% image cottagesPage.featuredImage.url,
+                    "" %}</div>
+                <div class="cottages__rates-text">
+                    <h2>Cottage {{ cottage.number }} Rates</h2>
+                    {% if cottage.number === '3' %}
+                        {% set rate = ratesPage.rates | find('cottage', 'three') %}
+                    {% else %}{% set rate = ratesPage.rates | find('cottage', 'one_two_four') %}
+                    {% endif %}
+                    {{ rate.rate | markdown | safe }}
+                </div>
+            </div>
+        </section>
+    {% endfor %}
+</div>
