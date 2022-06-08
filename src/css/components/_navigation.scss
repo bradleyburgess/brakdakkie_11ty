@@ -71,7 +71,7 @@
     align-items: center;
     position: fixed;
     top: 0;
-    left: 0;
+    left: -9999px;
     height: 100vh;
     width: 100vw;
     padding-top: 5rem;
@@ -79,10 +79,12 @@
     color: var(--white);
     background-color: var(--gray2);
     opacity: 0;
-    transition: all 200ms ease-in-out;
+    transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out, left 0ms 200ms;
     .menu-open & {
+      left: 0;
       visibility: visible;
       opacity: 1;
+      transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out, left 0ms 0ms;
     }
 
     &__list {

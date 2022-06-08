@@ -15,7 +15,7 @@ background: contact
                     item.name,
                     widths = [null],
                     formats = ['svg'] %}</div>
-                <a href="#" class="contact__link">{{ item.description }}</a>
+                <a href="{{ item.url }}" class="contact__link">{{ item.description }}</a>
             </li>
         {% endfor %}
     </ul>

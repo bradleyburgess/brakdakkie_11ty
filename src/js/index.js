@@ -9,6 +9,7 @@ import initReviews from './reviews';
   const html = document.querySelector('html');
   const hamburgerToggle = document.getElementById('hamburger-toggle');
   const hamburgerLabel = document.getElementById('hamburger-label');
+
   hamburgerToggle.addEventListener('click', () => {
     html.classList.toggle('menu-open');
     hamburgerToggle.ariaExpanded = toggleBoolean(hamburgerToggle.ariaExpanded);
