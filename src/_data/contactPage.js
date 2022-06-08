@@ -22,7 +22,7 @@ const CONTACT_PAGE_QUERY = gql`
 module.exports = async () => {
   const data = await getRequest(CONTACT_PAGE_QUERY, 'contact-page');
   const { socialLinks } = data.siteSettings;
-  const { image } = data.contactImage.featuredImage.url;
+  const image = data.contactImage.featuredImage.url;
   return {
     socialLinks,
     image,
