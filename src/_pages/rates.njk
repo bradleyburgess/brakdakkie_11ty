@@ -9,9 +9,13 @@ permalink: /rates/
 
 <div class="rates">
     <div class="rates__grid">
-        <div class="rates__image">{% image ratesPage.featuredImage,
-            "" %}</div>
-
+        <div class="rates__image">
+            {% image ratesPage.featuredImage,
+                "",
+                sizes = "(max-width: 1023px) 100vw, 544px",
+                loading = "eager"
+            %}
+        </div>
         <div class="rates__text">
             <h1 class="rates__heading">Rates</h1>
             {% for item in ratesPage.rates | sort %}

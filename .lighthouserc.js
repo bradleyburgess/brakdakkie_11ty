@@ -14,6 +14,8 @@ module.exports = {
       preset: 'lighthouse:no-pwa',
       assertions: {
         'csp-xss': 'off',
+        'image-size-responsize': 'warn',
+        'uses-responsive-images': 'warn',
       },
     },
     upload: {
