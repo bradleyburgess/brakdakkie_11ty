@@ -14,7 +14,7 @@
   <ul class="main-nav__list" aria-labelledby="main-nav__label">
     {% for item in pages %}
       <li class="main-nav__list-item">
-        <a href="/{{ item }}" {% if page.url === '/' + item + '/' %}aria-current="page"{% endif %}>{{ item | capitalize }}</a>
+        <a href="/{{ item }}/" {% if page.url === '/' + item + '/' %}aria-current="page"{% endif %}>{{ item | capitalize }}</a>
       </li>
     {% endfor %}
   </ul>

@@ -1,6 +1,7 @@
 ---
 layout: 'layouts/base.njk'
 permalink: /about/
+title: About
 ---
 
 <div class="logo">
@@ -35,7 +36,9 @@ permalink: /about/
             {% for item in aboutPage.policies %}
                 <details class="policies__details">
                     <summary class="policies__summary">
-                        {{ item.heading }}
+                        <h3 class="policies__summary-heading">
+                            {{ item.heading }}
+                        </h3>
                     </summary>
                     <div class="policies__description">
                         {{ item.content.markdown | markdown | safe }}

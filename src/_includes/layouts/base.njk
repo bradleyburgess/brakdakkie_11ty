@@ -80,6 +80,8 @@
     {% endif %}
   </head>
   <body {% if bodyClass %}class="{{ bodyClass | makeArray | join(" ") }}"{% endif %}>
+    <a href="#main-content" class="skip-main">Skip to Main Content</a>
+
     <header class="header">
       <a href="/" aria-label="Brakdakkie Guest Cottages" class="header__logo">
         {% include "partials/smalllogo.njk" %}
@@ -94,7 +96,8 @@
         </div>
       </button>
     </header>
-    <main>
+    <main id="main-content">
+      {% if title %}<h1 class="sr-only">{{ title }}</h1>{% endif %}
       {{ content | safe }}
     </main>
     {% include "partials/footer.njk" %}

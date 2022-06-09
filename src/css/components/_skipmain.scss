@@ -1,0 +1,25 @@
+a.skip-main {
+  display: block;
+  position: absolute;
+  top: auto;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -999;
+
+  &:focus,
+  &:active {
+    background: var(--white);
+    color: var(--gray1);
+    left: 0;
+    top: 0;
+    width: auto;
+    height: auto;
+    overflow: auto;
+    margin: 0.75rem;
+    padding: 0.35rem;
+    font-size: var(--size-3);
+    z-index: 999;
+  }
+}
