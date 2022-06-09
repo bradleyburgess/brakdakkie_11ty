@@ -14,7 +14,9 @@
 
   &__logo {
     display: block;
+    flex-shrink: 0;
     width: 3rem;
+    margin-right: 2rem;
 
     img {
       height: 100%;

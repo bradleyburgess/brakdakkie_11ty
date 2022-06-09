@@ -27,3 +27,24 @@
     {% endfor %}
   </ul>
 </nav>
+<noscript id="noscript-navigation">
+  <style>
+    .main-nav {
+      display: none;
+    }
+    .hamburger-toggle {
+      display: none;
+    }
+  </style>
+  <nav class="noscript-nav">
+    <h2 class="sr-only" id="noscript-nav__label">Main Navigation</h2>
+    <ul class="noscript-nav__list" aria-labelledby='noscript-nav__label'>
+
+      {% for item in pages %}
+        <li class="noscript-nav__list-item">
+          <a href="/{{ item }}/" {% if page.url === '/' + item + '/' %}aria-current="page"{% endif %}>{{ item | capitalize }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</noscript>
