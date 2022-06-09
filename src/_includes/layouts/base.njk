@@ -97,7 +97,7 @@
       </button>
     </header>
     <main id="main-content">
-      {% if title %}<h1 class="sr-only">{{ title }}</h1>{% endif %}
+      {% if title and not noSrTitle %}<h1 class="sr-only">{{ title }}</h1>{% endif %}
       {{ content | safe }}
     </main>
     {% include "partials/footer.njk" %}

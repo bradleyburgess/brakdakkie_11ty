@@ -133,6 +133,11 @@
   }
 
   // RATES
+  &__rates {
+    @include breakpoint-up(large) {
+      background-color: var(--white);
+    }
+  }
   &__rates-image {
     @include breakpoint-up(large) {
       padding: 2rem;
