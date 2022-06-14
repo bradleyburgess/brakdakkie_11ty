@@ -46,7 +46,7 @@
     "os-browserify": "^0.3.0",
     "parcel": "^2.6.0",
     "path-browserify": "^1.0.1",
-    "prettier": "^2.6.2",
+    "prettier": "^2.7.0",
     "querystring-es3": "^0.2.1",
     "rimraf": "^3.0.2",
     "stream-browserify": "^3.0.0",
