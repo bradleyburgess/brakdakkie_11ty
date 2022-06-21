@@ -70,7 +70,7 @@
     }
   },
   "dependencies": {
-    "photoswipe": "^5.2.7"
+    "photoswipe": "^5.2.8"
   },
   "engines": {
     "node": ">=14"
