@@ -5,7 +5,7 @@
 {% else %}{% set docTitle = [title, sitemeta.title] | join(" | ") %}
 {% endif %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -78,6 +78,16 @@
     {% else %}
       <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
     {% endif %}
+    <script>
+      document
+        .documentElement
+        .classList
+        .add('enhanced')
+      document
+        .documentElement
+        .classList
+        .remove('no-js')
+    </script>
   </head>
   <body {% if bodyClass %}class="{{ bodyClass | makeArray | join(" ") }}"{% endif %}>
     <a href="#main-content" class="skip-main">Skip to Main Content</a>
@@ -97,7 +107,9 @@
       </button>
     </header>
     <main id="main-content">
-      {% if title and not noSrTitle %}<h1 class="sr-only">{{ title }}</h1>{% endif %}
+      {% if title and not noSrTitle %}
+        <h1 class="sr-only">{{ title }}</h1>
+      {% endif %}
       {{ content | safe }}
     </main>
     {% include "partials/footer.njk" %}

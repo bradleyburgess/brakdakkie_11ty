@@ -1,4 +1,7 @@
 .hamburger-toggle {
+  .no-js & {
+    display: none;
+  }
   @include breakpoint-up(medium) {
     display: none;
   }

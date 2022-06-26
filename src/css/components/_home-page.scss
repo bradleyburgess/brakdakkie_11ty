@@ -115,6 +115,9 @@
     }
   }
   &__buttons-container {
+    .no-js & {
+      display: none;
+    }
     display: flex;
     justify-content: center;
     gap: 1rem;
