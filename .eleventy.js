@@ -39,15 +39,16 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPairedNunjucksShortcode('markdown', markdownShortcode);
 
   // plugins
-  eleventyConfig.addPlugin(brokenLinks);
+  process.env.NODE_ENV === 'production' && eleventyConfig.addPlugin(brokenLinks);
   eleventyConfig.addPlugin(faviconPlugin, {
     outputDir: dir.output,
     generateManifest: false,
   });
 
   // transforms, for prettifying and minifying
-  eleventyConfig.addTransform('prettier', prettierTransform);
-  eleventyConfig.addTransform('htmlmin', htmlminTransform);
+  process.env.NODE_ENV === 'development' &&
+    eleventyConfig.addTransform('prettier', prettierTransform);
+  process.env.NODE_ENV === 'production' && eleventyConfig.addTransform('htmlmin', htmlminTransform);
 
   return {
     dir,
