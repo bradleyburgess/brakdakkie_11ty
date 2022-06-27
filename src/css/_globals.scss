@@ -15,8 +15,15 @@ main {
   $footer-big: 8.49625rem;
 
   .contact-page & {
-    @include breakpoint-up(small) {
-      height: calc(100% - $footer-big);
+    @include breakpoint-down(medium) {
+      height: max(38.75rem, calc(100% - $footer-big));
+    }
+    @include breakpoint-down(small) {
+      height: max(35rem, calc(100% - $footer-big));
+    }
+    @include breakpoint-up(large) {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
     }
   }
   padding-top: 4.0125rem;

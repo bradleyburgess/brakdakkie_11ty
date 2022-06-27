@@ -1,9 +1,10 @@
 .contact {
+  $desktop-min-height: 55.1875rem;
   @include breakpoint-up(large) {
-    margin-block: 4rem;
+    margin-top: calc(3rem + max(0rem, calc((100vh - $desktop-min-height) * 0.5)));
   }
   @include breakpoint-down(medium) {
-    height: 100%;
+    height: max(30.87rem, calc(100vh - 8.49625rem - 4rem));
   }
 
   &__image {
