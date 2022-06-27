@@ -4,7 +4,7 @@
             <address class="footer__address">
                 <div class="footer__section">
                     <div class="footer__icon">
-                        {% image "assets/icon-google-maps.svg", "", widths=[null], loading = "eager" %}
+                        {% image "assets/icon-google-maps.svg", "", widths=[null], loading = "eager", formats=["svg"] %}
                     </div>
                     <div class="footer__text">
                         {% set footerMaps = socialLinks.all | find('name', 'Google Maps') %}
@@ -15,7 +15,7 @@
                 </div>
                 <div class="footer__section">
                     <div class="footer__icon">
-                        {% image "assets/icon-phone.svg", "", widths=[null], loading = "eager" %}
+                        {% image "assets/icon-phone.svg", "", widths=[null], loading = "eager", formats=["svg"] %}
                     </div>
                     <div class="footer__text">
                         {% set footerPhone = socialLinks.all | find('name', 'Phone') %}
@@ -24,7 +24,7 @@
                         </a>
                     </div>
                     <div class="footer__icon">
-                        {% image "assets/icon-email.svg", "", widths=[null], loading = "eager" %}
+                        {% image "assets/icon-email.svg", "", widths=[null], loading = "eager", formats=["svg"] %}
                     </div>
                     <div class="footer__text">
                         {% set footerEmail = socialLinks.all | find('name', 'Email') %}
