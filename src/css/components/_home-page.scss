@@ -37,12 +37,16 @@
 }
 
 .site-tagline {
-  max-width: 40rem;
+  // max-width: 30ch;
   text-align: center;
   padding-inline: 1rem;
-  font-size: clamp(var(--size5), 2vw, 1.9375rem);
+  font-size: clamp(var(--size5), 2.75vw, 1.9375rem);
   line-height: 1.5em;
   font-weight: 600;
+  p {
+    max-width: 30ch;
+    margin: 0 auto;
+  }
   em {
     font-family: var(--font-cursive);
     font-size: 1.05em;
