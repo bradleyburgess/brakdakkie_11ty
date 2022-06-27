@@ -16,7 +16,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include breakpoint-up(medium) {
+      margin-top: 4rem;
+    }
     @include breakpoint-up(large) {
+      margin-top: 0;
       display: grid;
       row-gap: 2rem;
     }
