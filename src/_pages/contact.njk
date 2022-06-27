@@ -9,7 +9,12 @@ bodyClass:
 
 <div class="sbs-grid contact">
     <div class="sbs-grid__image contact__image">
-        {% image contactPage.image, "", sizes = "(max-width: 1023px) 100vw, 500px", loading = "eager"
+        {% image 
+           contactPage.image, 
+           "", 
+           sizes = "(max-width: 1023px) 100vw, 500px", 
+           loading = "eager", 
+           fetchpriority = "high"
         %}
     </div>
     <div class="sbs-grid__text contact__text">

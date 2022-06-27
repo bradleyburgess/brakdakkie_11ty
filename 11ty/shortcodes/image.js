@@ -9,7 +9,7 @@ const defaults = {
   formats: ['webp', 'jpg'],
   loading: 'lazy',
   sizes: ['100vw'],
-  widths: [600, 900, 1200, 1800, 2400, 4200, null],
+  widths: [600, 750, 900, 1050, 1200, 1500, 1800, null],
   galleryImage: false,
 };
 
@@ -48,6 +48,7 @@ module.exports = async function (src, alt, _options) {
   };
 
   if (options.class) imageAttributes.class = options.class;
+  if (options.fetchpriority) imageAttributes.fetchpriority = options.fetchpriority;
 
   const html = Image.generateHTML(metadata, imageAttributes);
   debug('done transforming; returning');
