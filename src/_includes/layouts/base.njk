@@ -22,12 +22,12 @@
     <title>{{ docTitle }}</title>
 
     {# google fonts #}
-    {% if googlefonts %}<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>{% endif %}
+    {# {% if googlefonts %}<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>{% endif %} #}
 
     {# inline css #}
     {% if googlefonts %}
       <style>
-        {{googlefonts | safe}}
+        {% include "partials/googlefonts.css" %}
       </style>
     {% endif %}
     {% if criticalCss %}

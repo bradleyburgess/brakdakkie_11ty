@@ -21,6 +21,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./src');
   eleventyConfig.addPassthroughCopy({ 'src/assets': 'assets' });
   eleventyConfig.addPassthroughCopy({ 'node_modules/photoswipe/dist': 'photoswipe' });
+  eleventyConfig.addPassthroughCopy({ 'static/fonts': 'fonts' });
 
   // filters
   eleventyConfig.addFilter('sanitizeHtmlAttr', sanitizeHtmlAttr);
