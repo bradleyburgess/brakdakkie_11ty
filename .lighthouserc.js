@@ -17,6 +17,7 @@ module.exports = {
         'image-size-responsive': 'warn',
         'uses-responsive-images': 'warn',
         'tap-targets': 'warn',
+        'color-contrast': 'warn',
       },
     },
     upload: {
