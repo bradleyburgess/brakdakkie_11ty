@@ -1,0 +1,29 @@
+.oops {
+  $gap: 2rem;
+  &__text {
+    background-color: var(--white);
+    padding-inline: 0.5rem;
+    padding-block: 2rem;
+    @include breakpoint-up(medium) {
+      padding: clamp(1rem, calc(1rem + (100vw - 1024px) * 0.15), 4rem);
+    }
+  }
+  width: 100%;
+  max-width: var(--container);
+
+  h2 {
+    font-family: var(--font-cursive);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  p {
+    padding-inline: 0.5rem;
+  }
+  ul {
+    margin-left: 2rem;
+  }
+  a {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}
