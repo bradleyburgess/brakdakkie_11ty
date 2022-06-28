@@ -46,18 +46,6 @@
       </style>
     {% endif %}
 
-    {# inline js #}
-    {% if criticalJs %}
-      {% set js %}
-      {% for item in criticalJs %}
-        {% include "critical-js/" + item + ".js" %}
-      {% endfor %}
-      {% endset %}
-      <script>
-        {{ js | jsmin }}
-      </script>
-    {% endif %}
-
     {# normal css #}
     {% if hash.css | has('index') %}<link rel="stylesheet" href="/css/index{{ hash.css.index }}.css" media="screen"/>{% endif %}
     {% if pageCss %}
