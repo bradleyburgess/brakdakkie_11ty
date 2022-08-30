@@ -112,7 +112,7 @@
     {% include "partials/whatsapp-icon.njk" %}
 
     {# Analytics #}
-    {% if NODE_ENV === 'production' %}
+    {% if analytics.enabled and NODE_ENV === 'production' %}
       <noscript>
         <img src="{{ analytics.imgSrc }}" alt="">
       </noscript>

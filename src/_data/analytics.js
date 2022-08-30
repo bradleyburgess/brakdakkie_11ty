@@ -1,9 +1,13 @@
 require('dotenv').config();
 
 if (!process.env.ANALYTICS_IMGSRC || !process.env.ANALYTICS_SCRIPTSRC)
-  throw new Error('Analytics variables not set');
+  console.log('Analytics variables not set; disabling.');
+
+const ANALYTICS_IMGSRC = process.env.ANALYTICS_IMGSRC ?? '';
+const ANALYTICS_SCRIPTSRC = process.env.ANALYTICS_SCRIPTSRC ?? '';
 
 module.exports = () => ({
-  imgSrc: process.env.ANALYTICS_IMGSRC,
-  scriptSrc: process.env.ANALYTICS_SCRIPTSRC,
+  enabled: process.env.ANALYTICS_IMGSRC && process.env.ANALYTICS_SCRIPTSRC ? true : false,
+  imgSrc: ANALYTICS_IMGSRC,
+  scriptSrc: ANALYTICS_SCRIPTSRC,
 });
