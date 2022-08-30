@@ -68,6 +68,8 @@
     {% else %}
       <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
     {% endif %}
+
+    {# Detect Javascript #}
     <script>
       document
         .documentElement
@@ -108,5 +110,13 @@
         "" %}</div>
     {% endif %}
     {% include "partials/whatsapp-icon.njk" %}
+
+    {# Analytics #}
+    {% if NODE_ENV === 'production' %}
+      <noscript>
+        <img src="{{ analytics.imgSrc }}" alt="">
+      </noscript>
+      <script src="{{ analytics.scriptSrc }}" defer></script>
+    {% endif %}
   </body>
 </html>
