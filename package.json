@@ -23,7 +23,7 @@
     "@11ty/eleventy": "^2.0.0",
     "@11ty/eleventy-fetch": "^3.0.0",
     "@11ty/eleventy-img": "^3.0.0",
-    "@babel/core": "^7.21.0",
+    "@babel/core": "^7.21.3",
     "@parcel/transformer-sass": "^2.7.0",
     "assert": "^2.0.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
